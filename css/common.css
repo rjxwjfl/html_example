@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 1px;
+}
+
+body {
+    background-color: #edf0fe;
+    height: auto;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.fa-check {
+    color: rgb(114, 171, 28);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+button, textarea , input {
+    outline: none;
+}

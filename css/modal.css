@@ -1,0 +1,162 @@
+.todo-modal-container {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    
+
+    margin: 150px 0px;
+    border: none;
+    border-radius: 20px;
+    width: 500px;
+    height: 30%;
+
+    background-color: #fefefee5;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 4px #fbfbff;
+
+}
+
+.hidden-modal {
+    display: none;
+}
+
+.todo-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 30%;
+
+    background-color: #f2f2f2;
+    
+}
+
+.todo-time label {
+    display: inline-flex;
+    justify-content: start;
+    margin-bottom: 2px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.todo-time input {
+    margin-bottom: 10px;
+    margin-right: -25px;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+
+.todo-modal-content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-left: 10px;
+    border: #dbdbdb;
+    width: 70%;
+}
+
+.todo-title-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.todo-title {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+
+}
+
+.todo-title-view {
+    border: none;
+    height: 30px;
+
+    resize: none;
+
+    text-align: center;
+    line-height: 30px;
+}
+
+.now {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.now .hidden-icon {
+    display: none;
+}
+
+.todo-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    width: 100%;
+}
+
+.state-check-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 20%;
+    font-size: 12px;    
+}
+
+.todo-content textarea {
+    border: none;
+    width: 80%;
+    height: 100px;
+    resize: none;
+
+    background-color: #fefefecb;
+}
+
+.todo-submit-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-right: 35px;
+    width: 100%;
+}
+
+.modal-submit-button, .modal-cancel-button, .modal-modify-button {
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 70px;
+    height: 25px;
+
+    background-color: #fbfbff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+}
+
+.todo-submit-buttons button:hover {
+    background-color: #f0f0f7;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.todo-submit-buttons button:active {
+    background-color: #f0f0f7;
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.4);
+}
+
