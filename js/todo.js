@@ -123,7 +123,9 @@ class TodoService {
         })
 
         if (this.todoList.length < 1){
-            console.log("short");
+            todoContentList.innerHTML += `
+                ToDo 가 없습니다. 추가해주세요.
+            `;
         } else {
             this.todoList.forEach(todoObj => {
                 const time = new Date(todoObj.todoDateTime);
@@ -157,28 +159,31 @@ class TodoService {
             }
         });
 
-        if (this.todoList.length < 1){
-            console.log("short");
-        } else {
-            this.todoList.forEach(todoObj => {
+        let hasVisibleTodo = false;
 
-                    const time = new Date(todoObj.todoDateTime);
+        this.todoList.forEach(todoObj => {
+            const time = new Date(todoObj.todoDateTime);
+            const isTodoHidden = todoObj.todoState != value;
+            if (!isTodoHidden) {
+                hasVisibleTodo = true;
+            }
+            todoContentList.innerHTML += `
+            
+            <li class=${isTodoHidden ? "hidden-list" : ""}>
+                <span class="time-indicator">${time.getHours() < 10 ? "0" + time.getHours() : time.getHours()}:${time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes()}</span>
+                <span class="todo-context-title">${todoObj.todoTitle}</span> 
+                <div class="todo-list-state">
+                    <span><i class="fa-solid fa-check ${todoObj.todoState == 'done' ? "" : "hidden-icon"}"></i></span>
+                    <span><i class="fa-solid fa-ellipsis ${todoObj.todoState == 'done' ? "hidden-icon" : ""}"></i></span>
+                    <button class="todo-delete-button"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li>
+            
+            `;
+        });
 
-                    todoContentList.innerHTML += `
-                    
-                    <li class=${todoObj.todoState == value ? "": "hidden-list"}>
-                        <span class="time-indicator">${time.getHours() < 10 ? "0" + time.getHours() : time.getHours()}:${time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes()}</span>
-                        <span class="todo-context-title">${todoObj.todoTitle}</span> 
-                        <div class="todo-list-state">
-                            <span><i class="fa-solid fa-check ${todoObj.todoState == 'done' ? "" : "hidden-icon"}"></i></span>
-                            <span><i class="fa-solid fa-ellipsis ${todoObj.todoState == 'done' ? "hidden-icon" : ""}"></i></span>
-                            <button class="todo-delete-button"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </li>
-                    
-                    `;
-            });
-
+        if (!hasVisibleTodo) {
+            todoContentList.innerHTML = '항목이 없습니다.';
         }
         TodoEvent.getInstance().addEventShowTodoDtl();
         TodoEvent.getInstance().addEventRemoveTodoClick();

@@ -1,7 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gaegu', cursive;
+    font-weight: 400;
 }
 
 *::-webkit-scrollbar {
@@ -28,6 +33,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: none;
   }
 
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset ; -webkit-text-fill-color: #000; }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
+
 button, textarea , input {
     outline: none;
+    font-weight: 700;
 }
